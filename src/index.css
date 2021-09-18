@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Yekan';
+  src: url(./assets/Fonts/Yekan\ Bakh.ttf);
+}
+@font-face {
+  font-family: 'YekanLight';
+  src: url(./assets/Fonts/YekanBakh_Light.ttf);
+}
+html , body , #root{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family:'Yekan';
+  direction: rtl !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
