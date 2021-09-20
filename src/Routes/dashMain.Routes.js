@@ -1,6 +1,6 @@
 import DashHome from "../Pages/dashboard/DashHome/DashHome";
 import ManageProducts from "../Pages/dashboard/ManageProducts/ManageProducts";
-import Reports from "../Pages/Reports/Reports";
+import Reports from "../Pages/dashboard/Reports/Reports";
 
 const dashMain= [
     {path:"/dashboard" , exact:true , Component : DashHome},

@@ -16,7 +16,7 @@ function Dashboard() {
         <header className="w-100">
           <Header />
         </header>
-        <div className="">
+        <div className="h-100 pt-3">
           {dashMain.map(({ path, exact, Component }, index) => {
             return (
               <Route

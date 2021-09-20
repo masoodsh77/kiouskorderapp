@@ -7,7 +7,7 @@ function Sidebar(props) {
     <div className="h-100 sidebar  flex-wrap">
       <div className="LogoPosition d-flex justify-content-center align-items-center">
         <img src={logo} width="40px" className="logo" />
-        <span className="brandName">کای دای</span>
+        <span className="brandName text-light">کای دای</span>
       </div>
       <div className="Menu">
         <ul>

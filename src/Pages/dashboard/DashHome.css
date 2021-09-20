@@ -1,0 +1,28 @@
+.card{
+    height: 7rem;
+    border: none !important;
+    border-radius: 5px !important;
+    background-color: #fff;
+    box-shadow: 1px 5px 10px #dbdbdb;
+    padding: 0.5rem;
+    position: relative;
+}
+.dashHomeCardIcon{
+    color: rgba(222,48,111,0.15) !important;
+    font-size: 5rem;
+    position: absolute;
+}
+.title{
+    position: absolute;
+    font-size: 2rem;
+}
+.info{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    color: rgb(222,48,111);
+}
+.info span{
+    color: black;
+}
