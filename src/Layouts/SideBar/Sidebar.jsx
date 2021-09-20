@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/img/logo.png";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <div className="h-100 sidebar  flex-wrap">
       <div className="LogoPosition d-flex justify-content-center align-items-center"> 

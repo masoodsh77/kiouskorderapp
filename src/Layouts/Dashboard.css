@@ -66,3 +66,24 @@
     padding: 0.5rem;
     text-align: center;
   }
+.main{
+  width: calc(100% - 15rem) !important;
+  height: 100%;
+  margin-right: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+  /*Header*/
+  .Header{
+    width: 100% !important;
+    height: 4rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    color: #000;
+    box-shadow: 0 0 5px gray;
+    padding: 1rem;
+  }
