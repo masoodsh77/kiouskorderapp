@@ -3,7 +3,6 @@
     background-color: #DE306F;
     position: fixed;
     padding: 0.5rem 0.5rem 0.5rem 0;
-    color: white;
     display: flex;
     justify-content: center;
 }
@@ -14,7 +13,7 @@
     font-size: 2rem;
     padding: 0 20px;
 }
-  .Menu ul li{
+  .li{
     list-style: none;
     cursor: pointer;
     height: 45px;
@@ -24,18 +23,30 @@
     align-items: center;
     align-content: center;
     padding-right: 20px ;
+    color: white;
+    text-decoration: none;
   }
-  .Menu ul li:hover, .activeMenu{
+  .activeMenu{
     position: relative;
     height: 45px;
     width: 14rem;
     text-align: center;
     background-color: #f7f7f7;
     border-radius: 0px 25px 25px 0;
-    color: black !important;
+    color: #a01447 !important;
+    text-decoration: none;
+  }
+  .li:hover{
+    position: relative;
+    height: 45px;
+    width: 14rem;
+    text-align: center;
+    background-color: #f7f7f7;
+    border-radius: 0px 25px 25px 0;
+    color: #a01447 !important;
   }
   
-  .Menu ul li:hover::before , .activeMenu::before{
+  .li:hover::before , .activeMenu::before{
     content: "";
     position: absolute;
     background-color: transparent;
@@ -44,9 +55,10 @@
     height: 50px;
     width: 25px;
     border-top-left-radius:50px;
-    box-shadow: 0 -25px 0 0 #f7f7f7
+    box-shadow: 0 -25px 0 0 #f7f7f7;
+    color: black ;
   }
-  .Menu ul li:hover::after , .activeMenu::after{
+  .li:hover::after , .activeMenu::after{
     content: "";
     position: absolute;
     background-color: transparent;
@@ -56,11 +68,8 @@
     width: 25px;
     border-top-left-radius:50px;
     box-shadow: 0 -25px 0 0 #f7f7f7;
-    transform: rotateX(180deg)
-  }
-  .Menu ul a{
-    color: #fff !important;
-    text-decoration: none;
+    transform: rotateX(180deg);
+    color: black ;
   }
   .support{
     background-color: #a01447;
@@ -69,6 +78,7 @@
     border-radius: 10px;
     padding: 0.5rem;
     text-align: center;
+    color: white;
   }
 .main{
   width: calc(100% - 15rem) !important;

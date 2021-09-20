@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 
 function Sidebar(props) {
@@ -11,18 +11,24 @@ function Sidebar(props) {
       </div>
       <div className="Menu">
         <ul>
-          <Link to="/dashboard" activeClassName="activeMenu">
-            <li>داشبورد</li>
-          </Link>
-          <Link to="/dashboard/products" activeClassName="activeMenu">
-            <li>مدیریت محصولات</li>
-          </Link>
-          <li>مدیریت فروشگاه ها</li>
-          <li>مدیریت محصولات</li>
-          <li>مدیریت ایستگاه ها</li>
-          <Link to="/dashboard/reports" activeClassName="activeMenu">
-            <li> گزارشات</li>
-          </Link>
+          <NavLink className="li" exact to="/dashboard" activeClassName="activeMenu">
+            داشبورد
+          </NavLink>
+          <NavLink  className="li" to="/dashboard/product" activeClassName="activeMenu">
+            مدیریت محصولات
+          </NavLink>
+          <NavLink  className="li" to="/dashboard/producs" activeClassName="activeMenu">
+            مدیریت فروشگاه ها
+          </NavLink>
+          <NavLink  className="li" to="/dashboard/produts" activeClassName="activeMenu">
+            مدیریت محصولات
+          </NavLink>
+          <NavLink  className="li" to="/dashboard/prodcts" activeClassName="activeMenu">
+            مدیریت ایستگاه ها
+          </NavLink>
+          <NavLink  className="li" to="/dashboard/reports" activeClassName="activeMenu">
+            گزارشات
+          </NavLink>
         </ul>
       </div>
       <div className="support">

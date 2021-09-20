@@ -16,6 +16,7 @@ function Dashboard() {
         <header className="w-100">
           <Header />
         </header>
+        <div className="">
           {dashMain.map(({ path, exact, Component }, index) => {
             return (
               <Route
@@ -26,6 +27,7 @@ function Dashboard() {
               />
             );
           })}
+        </div>
         <footer className="w-100">
           <Footer />
         </footer>
