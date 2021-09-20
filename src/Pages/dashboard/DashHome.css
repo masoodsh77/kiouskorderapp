@@ -52,3 +52,31 @@
     max-height: 20rem !important;
     width: 100% !important;
 }
+.resturantCard{
+    cursor: pointer;
+    border-bottom: 1px solid lightgray;
+    height: 3rem;
+}
+.resturantCard:hover{
+    background-color: rgba(222,48,111,0.1);
+}
+.resturantImg img{
+    border-radius: 50% !important ;
+    height: 3rem;
+    width: 3rem;
+}
+.resturantName , .resturantSell{
+    text-align: right !important;
+}
+.resturantIcon{
+    text-align: left !important;
+}
+.resturantSell{
+    color: #000;
+}
+.resturantSell span{
+    color: #DE306F;
+}
+.resturantArrow{
+    color: #DE306F;
+}

@@ -24,9 +24,6 @@ function Sidebar(props) {
           <NavLink  className="li" to="/dashboard/produts" activeClassName="activeMenu">
           <FaCashRegister className="sidebarMenuIcon"/> مدیریت فروش
           </NavLink>
-          <NavLink  className="li" to="/dashboard/prodcts" activeClassName="activeMenu">
-          <FaDoorClosed className="sidebarMenuIcon"/> مدیریت ایستگاه ها
-          </NavLink>
           <NavLink  className="li" to="/dashboard/reports" activeClassName="activeMenu">
           <FaChartPie className="sidebarMenuIcon"/> گزارشات
           </NavLink>
