@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
+import {FaCashRegister, FaChartPie, FaCloudscale, FaDoorClosed, FaShoppingBasket, FaStore} from 'react-icons/fa'
 
 function Sidebar(props) {
   return (
@@ -12,22 +13,22 @@ function Sidebar(props) {
       <div className="Menu">
         <ul>
           <NavLink className="li" exact to="/dashboard" activeClassName="activeMenu">
-            داشبورد
+            <FaCloudscale className="sidebarMenuIcon"/> داشبورد
           </NavLink>
           <NavLink  className="li" to="/dashboard/product" activeClassName="activeMenu">
-            مدیریت محصولات
+          <FaShoppingBasket className="sidebarMenuIcon"/> مدیریت محصولات
           </NavLink>
           <NavLink  className="li" to="/dashboard/producs" activeClassName="activeMenu">
-            مدیریت فروشگاه ها
+          <FaStore className="sidebarMenuIcon"/> مدیریت فروشگاه ها
           </NavLink>
           <NavLink  className="li" to="/dashboard/produts" activeClassName="activeMenu">
-            مدیریت محصولات
+          <FaCashRegister className="sidebarMenuIcon"/> مدیریت فروش
           </NavLink>
           <NavLink  className="li" to="/dashboard/prodcts" activeClassName="activeMenu">
-            مدیریت ایستگاه ها
+          <FaDoorClosed className="sidebarMenuIcon"/> مدیریت ایستگاه ها
           </NavLink>
           <NavLink  className="li" to="/dashboard/reports" activeClassName="activeMenu">
-            گزارشات
+          <FaChartPie className="sidebarMenuIcon"/> گزارشات
           </NavLink>
         </ul>
       </div>

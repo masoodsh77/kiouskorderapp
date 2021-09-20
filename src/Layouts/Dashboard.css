@@ -88,6 +88,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.sidebarMenuIcon{
+  margin-left: 0.3rem;
+}
   /*Header*/
   .Header{
     width: 100% !important;
