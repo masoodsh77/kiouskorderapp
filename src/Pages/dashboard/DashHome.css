@@ -1,3 +1,6 @@
+.dashHome{
+    overflow: hidden;
+}
 .card{
     height: 7rem;
     border: none !important;
@@ -6,6 +9,7 @@
     box-shadow: 1px 5px 10px #dbdbdb;
     padding: 0.5rem;
     position: relative;
+    margin-bottom: 1rem;
 }
 .dashHomeCardIcon{
     color: rgba(222,48,111,0.15) !important;
@@ -25,4 +29,26 @@
 }
 .info span{
     color: black;
+}
+.chart{
+    width: 100%;
+    height:23.5rem !important;
+    border: none !important;
+    border-radius: 5px !important;
+    background-color: #fff;
+    box-shadow: 1px 5px 10px #dbdbdb;
+    padding: 0.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.chartTitle{
+    text-align: right !important;
+    font-size: 1.2rem;
+    border-bottom: 2px solid rgb(222,48,111);
+    margin-bottom: 10px;
+}
+.LineChart svg{
+    height: 20rem !important;
+    max-height: 20rem !important;
+    width: 100% !important;
 }

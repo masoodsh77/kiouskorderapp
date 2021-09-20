@@ -11,11 +11,10 @@ html , body , #root{
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family:'Yekan';
+  font-family:'Yekan' !important;
   direction: rtl !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'yekan' !important
 }
