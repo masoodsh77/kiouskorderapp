@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <switch>
+        <Switch>
         {dashRoute.map(({ path, exact, Component }, index) => {
             return (
               <Route
@@ -18,7 +18,7 @@ function App() {
               />
             );
           })}
-        </switch>
+        </Switch>
       </Router>
     </div>
   );

@@ -5,6 +5,6 @@ import Dashboard from '../Layouts/Dashboard'
 const dashRoute = [
     {path:"/" , exact:true , Component : Home},
     { path: "/Login", exact: true, Component: Login },
-    { path: "/dashboard", exact: true, Component: Dashboard  },
+    { path: "/dashboard", exact: false, Component: Dashboard  },
   ];
   export default dashRoute;
