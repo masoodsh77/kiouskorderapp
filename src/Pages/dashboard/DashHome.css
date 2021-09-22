@@ -80,3 +80,11 @@
 .resturantArrow{
     color: #DE306F;
 }
+.TableIconDelete{
+    color: #DE306F;
+    cursor: pointer;
+}
+.TableIconEdite{
+    color: rgb(35, 212, 130);
+    cursor: pointer;
+}

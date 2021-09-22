@@ -1,9 +1,11 @@
 import axios from "axios";
 import { isEmpty } from "lodash";
 import React, { useEffect, useState } from "react";
+import { FaPen, FaTrash } from "react-icons/fa";
 
 function ProductTable({ CHMenu }) {
   const [products, setProducts] = useState([]);
+  const [deleteItem , setDeleteItem] = useState(1);
   useEffect(() => {
     axios
       .get(`http://localhost:1337/categories/${CHMenu}`, {
@@ -14,7 +16,12 @@ function ProductTable({ CHMenu }) {
       .then((res) => {
         setProducts(res.data.products);
       });
-  }, [CHMenu]);
+  }, [CHMenu ,deleteItem ]);
+  const handleEdit = (e) => {
+    console.log(e.target.value);
+    axios.delete(`http://localhost:1337/products/${e.target.value}`)
+    setDeleteItem(+1)
+  };
   console.log(products, "tatata");
   const emptyData = isEmpty(products);
   return (
@@ -34,7 +41,7 @@ function ProductTable({ CHMenu }) {
           <tbody>
             <td colspan="6">
               <div class="alert alert-danger mt-4" role="alert">
-                ابتدا از منوی سمت راست نام رستوران را انتخاب نمایید
+                محصولی جهت نمایش وجود ندارد لطفا نام رستوران را تغییر دهید
               </div>
             </td>
           </tbody>
@@ -66,7 +73,15 @@ function ProductTable({ CHMenu }) {
                   <td>{items.id}</td>
                   <td>{items.title}</td>
                   <td>${items.price}</td>
-                  <td>حذف | ویرایش</td>
+                  <td>
+                    <button className=" btn btn-outline-danger" value={items.id} onClick={handleEdit}>
+                      حذف
+                    </button>
+                    {" "} |{" "}
+                    <button className=" btn btn-outline-success" value={items.id} onClick={handleEdit}>
+                      ویرایش
+                    </button>
+                  </td>
                 </tr>
               );
             })}
