@@ -1,31 +1,21 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AddProduct from "./sidebar/AddProduct";
+import ProductTable from "./Table/ProductTable";
 
 function ManageProducts() {
-    const resturants = []
-  useEffect(() => {
-    axios
-      .get("http://localhost:1337/categories", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => {
-          res.data.map(items=>{
-              resturants.push(items)
-          })
-      });
-  }, [resturants]);
+    const [CHMenu , setCHMenu] = useState('')
+
+    console.log(CHMenu)
   return (
-    <div className="text-center p-3">
+    <div className="text-center h-100 p-1">
       <div className="row p-0 m-0">
-        <div className="card col-4 h-100">
+        <div className="card col-3 h-100 m-2 mt-0">
           <div className="chartTitle w-100">افزودن محصولات جدید</div>
-          <AddProduct resturants={resturants} />
+          <AddProduct setCHMenu={setCHMenu}/>
         </div>
         <div className="card col-8 h-100">
           <div className="chartTitle w-100">محصولات</div>
+          <ProductTable CHMenu={CHMenu}/>
         </div>
       </div>
     </div>

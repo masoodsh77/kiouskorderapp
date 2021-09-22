@@ -3,7 +3,7 @@ import Sidebar from "./SideBar/Sidebar";
 import "./Dashboard.css";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import dashMain from "../Routes/dashMain.Routes";
 
 function Dashboard() {

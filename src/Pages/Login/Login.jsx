@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/img/logo.png";
 import axios from "axios";
