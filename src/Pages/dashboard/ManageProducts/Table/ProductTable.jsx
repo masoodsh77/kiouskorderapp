@@ -32,7 +32,11 @@ function ProductTable({ CHMenu }) {
             </tr>
           </thead>
           <tbody>
-              <td colspan="6">ابتدا از منوی سمت راست نام رستوران را انتخاب نمایید </td>
+            <td colspan="6">
+              <div class="alert alert-danger mt-4" role="alert">
+                ابتدا از منوی سمت راست نام رستوران را انتخاب نمایید
+              </div>
+            </td>
           </tbody>
         </table>
       ) : (
@@ -48,11 +52,17 @@ function ProductTable({ CHMenu }) {
             </tr>
           </thead>
           <tbody>
-            {products.map((items , i) => {
+            {products.map((items, i) => {
               return (
                 <tr>
-                  <th scope="row">{i+1}</th>
-                  <td><img src={`http://localhost:1337${items.image.url}`} alt={items.name} width="40px"/></td>
+                  <th scope="row">{i + 1}</th>
+                  <td>
+                    <img
+                      src={`http://localhost:1337${items.image.url}`}
+                      alt={items.name}
+                      width="40px"
+                    />
+                  </td>
                   <td>{items.id}</td>
                   <td>{items.title}</td>
                   <td>${items.price}</td>
