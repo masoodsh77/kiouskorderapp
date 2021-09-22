@@ -28,6 +28,9 @@ function Login(props) {
           setError(true);
           setErrorMessage("نام کاربری یا رمز عبور شما اشتباه است");
         }
+      }).catch(err=>{
+        setError(true);
+          setErrorMessage("نام کاربری یا رمز عبور شما اشتباه است");
       });
   };
   const handleUsername = (e) => {

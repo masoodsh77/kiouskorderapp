@@ -15,10 +15,10 @@ function Sidebar(props) {
           <NavLink className="li" exact to="/dashboard" activeClassName="activeMenu">
             <FaCloudscale className="sidebarMenuIcon"/> داشبورد
           </NavLink>
-          <NavLink  className="li" to="/dashboard/product" activeClassName="activeMenu">
+          <NavLink  className="li" to="/dashboard/products" activeClassName="activeMenu">
           <FaShoppingBasket className="sidebarMenuIcon"/> مدیریت محصولات
           </NavLink>
-          <NavLink  className="li" to="/dashboard/producs" activeClassName="activeMenu">
+          <NavLink  className="li" to="/dashboard/produc" activeClassName="activeMenu">
           <FaStore className="sidebarMenuIcon"/> مدیریت فروشگاه ها
           </NavLink>
           <NavLink  className="li" to="/dashboard/produts" activeClassName="activeMenu">
