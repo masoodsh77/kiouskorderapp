@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
-import {FaCashRegister, FaChartPie, FaCloudscale, FaDoorClosed, FaShoppingBasket, FaStore} from 'react-icons/fa'
+import {FaCashRegister, FaChartPie, FaCloudscale, FaShoppingBasket, FaStore} from 'react-icons/fa'
 
 function Sidebar(props) {
   return (
     <div className="h-100 sidebar  flex-wrap">
       <div className="LogoPosition d-flex justify-content-center align-items-center">
-        <img src={logo} width="40px" className="logo" />
+        <img src={logo} width="40px" className="logo" alt="" />
         <span className="brandName text-light">کای دای</span>
       </div>
       <div className="Menu">

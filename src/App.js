@@ -1,5 +1,4 @@
 import './App.css';
-import Login from './Pages/Login/Login'
 import {BrowserRouter as Router , Route , Switch} from 'react-router-dom'
 import dashRoute from './Routes/dashboard.Routes';
 

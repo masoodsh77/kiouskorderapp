@@ -2,19 +2,19 @@ import axios from "axios";
 import { isEmpty } from "lodash";
 import React, { useEffect, useState } from "react";
 
-const AddProduct = ({ setCHMenu }) => {
+const AddProduct = ({ setCHMenu, CHMenu }) => {
   const [resturants, setResturants] = useState([]);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [imageUpload, setImageUpload] = useState(null);
-  const [addProduct, setAddProduct] = useState({});
+  const [description, setDescription] = useState("");
+  const [resName , setResName] = useState({})
   const data = {
     title: "",
     description: "",
     price: "",
-    image: "",
     status: "published",
-    custom_field: [],
+    Custom_field: [],
+    categories:[]
   };
 
   useEffect(() => {
@@ -31,6 +31,15 @@ const AddProduct = ({ setCHMenu }) => {
 
   const handleResturant = (e) => {
     setCHMenu(e.target.value);
+    axios.get(`http://localhost:1337/categories/${CHMenu}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    .then((res) => {
+      console.log(res.data)
+      setResName(res.data)
+    });
   };
 
   const emptyData = isEmpty(resturants);
@@ -42,38 +51,31 @@ const AddProduct = ({ setCHMenu }) => {
   const handlePrice = (e) => {
     setPrice(e.target.value);
   };
-
-  const imageHandler = (e) => {
-    setImageUpload(e.target.files[0]);
-  };
-  const formData = new FormData();
-  const onFileUpload = (e) => {
-    e.preventDefault();
-    formData.append("image", imageUpload);
-    axios
-      .post("http://localhost:1337/upload/", formData, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          Accept: "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
-    console.log(formData, "this is image form");
+  const handledescription = (e) => {
+    setDescription(e.target.value);
   };
   data.title = title;
   data.price = price;
-  console.log(data);
-  console.log(imageUpload, "this is image");
+  data.description = description
+  data.categories.push(resName)
 
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+      axios.post(`http://localhost:3000/products`, data , {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then(res=>{
+        console.log(res.data , "test")
+      })
+  };
+
+  console.log(data)
   return (
     <div>
       {emptyData ? null : (
-        <form>
+        <form onSubmit={handleAdd}>
           <div className="mb-3">
             <select
               className="form-select"
@@ -110,21 +112,15 @@ const AddProduct = ({ setCHMenu }) => {
               value={price}
             />
           </div>
-          <div className="mb-3 row">
-            <div className="col-9">
-              <input
-                type="file"
-                className="form-control"
-                id="productPic"
-                placeholder="عکس محصول"
-                onChange={imageHandler}
-                accept="image/*"
-                multiple={false}
-              />
-            </div>
-            <button className="col-2 btn btn-primary" onClick={onFileUpload}>
-              =
-            </button>
+          <div className="mb-3">
+            <textarea
+              className="form-control"
+              id="productPrice"
+              placeholder="توضیحات"
+              onChange={handledescription}
+              value={description}
+              row={2}
+            />
           </div>
           <div className="chartTitle w-100">آپشن های اضافی محصول</div>
           <div
@@ -207,7 +203,7 @@ const AddProduct = ({ setCHMenu }) => {
             </div>
           </div>
           <div className="d-grid gap-2">
-            <button className="btn btn-success" type="button">
+            <button className="btn btn-success" type="submit">
               ثبت محصول
             </button>
           </div>

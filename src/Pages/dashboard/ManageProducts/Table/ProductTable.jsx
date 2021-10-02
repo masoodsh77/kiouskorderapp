@@ -1,7 +1,6 @@
 import axios from "axios";
 import { isEmpty } from "lodash";
 import React, { useEffect, useState } from "react";
-import { FaPen, FaTrash } from "react-icons/fa";
 
 function ProductTable({ CHMenu }) {
   const [products, setProducts] = useState([]);
@@ -15,17 +14,14 @@ function ProductTable({ CHMenu }) {
       })
       .then((res) => {
         setProducts(res.data.products);
-        console.log(res.data)
       });
   }, [CHMenu ,deleteItem ]);
   const handleEdit = (e) => {
-    console.log(e.target.value);
     axios.delete(`http://localhost:1337/products/${e.target.value}`)
     .then(res =>{
       setDeleteItem(deleteItem + 1)
     })
   };
-  console.log(products, "tatata");
   const emptyData = isEmpty(products);
   return (
     <div>

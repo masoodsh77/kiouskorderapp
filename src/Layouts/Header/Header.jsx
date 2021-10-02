@@ -16,7 +16,7 @@ function Header() {
     return (
         <div className="Header">
             <div>
-                <a>داشبورد</a>
+                <span>داشبورد</span>
             </div>
             <div>
                 سلام {username} عزیز
