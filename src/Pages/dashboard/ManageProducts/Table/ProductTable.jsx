@@ -15,12 +15,15 @@ function ProductTable({ CHMenu }) {
       })
       .then((res) => {
         setProducts(res.data.products);
+        console.log(res.data)
       });
   }, [CHMenu ,deleteItem ]);
   const handleEdit = (e) => {
     console.log(e.target.value);
     axios.delete(`http://localhost:1337/products/${e.target.value}`)
-    setDeleteItem(+1)
+    .then(res =>{
+      setDeleteItem(deleteItem + 1)
+    })
   };
   console.log(products, "tatata");
   const emptyData = isEmpty(products);
@@ -39,8 +42,8 @@ function ProductTable({ CHMenu }) {
             </tr>
           </thead>
           <tbody>
-            <td colspan="6">
-              <div class="alert alert-danger mt-4" role="alert">
+            <td colSpan="6">
+              <div className="alert alert-danger mt-4" role="alert">
                 محصولی جهت نمایش وجود ندارد لطفا نام رستوران را تغییر دهید
               </div>
             </td>

@@ -4,6 +4,19 @@ import React, { useEffect, useState } from "react";
 
 const AddProduct = ({ setCHMenu }) => {
   const [resturants, setResturants] = useState([]);
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [imageUpload, setImageUpload] = useState(null);
+  const [addProduct, setAddProduct] = useState({});
+  const data = {
+    title: "",
+    description: "",
+    price: "",
+    image: "",
+    status: "published",
+    custom_field: [],
+  };
+
   useEffect(() => {
     axios
       .get("http://localhost:1337/categories", {
@@ -19,7 +32,44 @@ const AddProduct = ({ setCHMenu }) => {
   const handleResturant = (e) => {
     setCHMenu(e.target.value);
   };
+
   const emptyData = isEmpty(resturants);
+
+  const handleTitle = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handlePrice = (e) => {
+    setPrice(e.target.value);
+  };
+
+  const imageHandler = (e) => {
+    setImageUpload(e.target.files[0]);
+  };
+  const formData = new FormData();
+  const onFileUpload = (e) => {
+    e.preventDefault();
+    formData.append("image", imageUpload);
+    axios
+      .post("http://localhost:1337/upload/", formData, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Accept: "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+    console.log(formData, "this is image form");
+  };
+  data.title = title;
+  data.price = price;
+  console.log(data);
+  console.log(imageUpload, "this is image");
+
   return (
     <div>
       {emptyData ? null : (
@@ -46,14 +96,8 @@ const AddProduct = ({ setCHMenu }) => {
               className="form-control"
               id="productName"
               placeholder="نام محصول"
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="productCode"
-              placeholder="کد محصول"
+              onChange={handleTitle}
+              value={title}
             />
           </div>
           <div className="mb-3">
@@ -62,15 +106,25 @@ const AddProduct = ({ setCHMenu }) => {
               className="form-control"
               id="productPrice"
               placeholder="قیمت محصول(تومان)"
+              onChange={handlePrice}
+              value={price}
             />
           </div>
-          <div className="mb-3">
-            <input
-              type="file"
-              className="form-control"
-              id="productPic"
-              placeholder="عکس محصول"
-            />
+          <div className="mb-3 row">
+            <div className="col-9">
+              <input
+                type="file"
+                className="form-control"
+                id="productPic"
+                placeholder="عکس محصول"
+                onChange={imageHandler}
+                accept="image/*"
+                multiple={false}
+              />
+            </div>
+            <button className="col-2 btn btn-primary" onClick={onFileUpload}>
+              =
+            </button>
           </div>
           <div className="chartTitle w-100">آپشن های اضافی محصول</div>
           <div
