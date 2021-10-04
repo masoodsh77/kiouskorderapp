@@ -1,0 +1,10 @@
+.MenuFooter{
+    height: 5rem;
+    color: white;
+    font-size: 1.5rem;
+    background-color: #CA1F31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

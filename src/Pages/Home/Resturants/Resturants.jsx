@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Resturants.css";
 import Logo from "../../../assets/img/logo.png";
 import axios from "axios";
+import Header from "../../../Components/MenuLayouts/Header/Header";
+import ResturantCard from "../../../Components/ResturantCard/ResturantCard";
+import Footer from "../../../Components/MenuLayouts/Footer/Footer";
 function Resturants() {
   const [restu, setRestu] = useState([]);
   useEffect(() => {
@@ -11,22 +14,18 @@ function Resturants() {
     });
   }, []);
   return (
-    <div className="d-flex justify-content-center resturants flex-wrap">
-      <div className="resturantsHeader w-100 text-center">
-        رستوران مورد نظر خود را انتخاب کنید
-      </div>
+    <div className="d-flex justify-content-center resturants flex-wrap w-100">
+      <Header title="رستوران مورد نظر خود را انتخاب کنید"/>
       <div className="resturantsCards w-100">
         <div className="row p-2 s-flex justify-content-center">
-          {restu.map((item, i) => {
+          {restu.map((item) => {
             return (
-              <div key={i} className="resturantsCard col-3 d-flex justify-content-center align-items-center flex-wrap m-1">
-                <img src={Logo} alt="" width="95rem" />
-                <div className="w-100 text-center">{item.name}</div>
-              </div>
+              <ResturantCard Logo={Logo} item={item}/>
             );
           })}
         </div>
       </div>
+          <Footer link="/"/>
     </div>
   );
 }
